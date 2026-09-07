@@ -1,0 +1,10 @@
+reminder_bot_refactor/.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+*.db
+.idea/
+.vscode/
+*.csv
