@@ -9,7 +9,7 @@ router = Router(name="start")
 @router.message(Command("start"))
 async def start_handler(message: Message):
     await message.answer(
-        "Привет. Я бот-напоминалка.\n\n"
+        f"Привет, {message.from_user.first_name}! Я бот-напоминалка.\n\n"
         "Команды:\n"
         "/add — добавить напоминание\n"
         "/list — список напоминаний\n"
