@@ -4,11 +4,13 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
+from aiogram import F
 
 
 import storage
 from states import ChangeReminderState, ReminderState
 from utils.dates import format_date, parse_date
+
 
 
 router = Router(name="reminders")
@@ -296,3 +298,8 @@ async def info_handler(message: Message, state: FSMContext):
 
     await message.answer(f"Напоминание добавлено:\n{date} — {info}")
     await state.clear()
+
+
+@router.message(F.text)
+async def echo_demo(message: Message):
+    await message.answer(f"Ты написал: {message.text}")
